@@ -46,7 +46,7 @@
       <section style="font-size:15px; line-height:1.85; color:#d1d5db;">
         
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">一、海外容器镜像仓库拉取超时痛点深度剖析</h2>
-        <p>现代云原生架构重度依赖从官方Docker Hub、Google gcr.io及GitHub ghcr.io拉取基础运行环境镜像。由于容器镜像通常由数十个多层Layer构成，且每一层解压后均达数百兆，在跨洋公网环境下极易遭遇中间路由限速或TCP连接重传超时。不少构建跨国持续集成流水线的DevOps工程师在查阅<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">跨境专线选型指南</a>时，将网络通道是否具备稳定的万兆突发吞吐与低丢包率作为选型的核心指标，以彻底破除镜像拉取迟滞对软件交付的拖累。</p>
+        <p>现代云原生架构重度依赖从官方Docker Hub、Google gcr.io及GitHub ghcr.io拉取基础运行环境镜像。由于容器镜像通常由数十个多层Layer构成，且每一层解压后均达数百兆，在跨洋公网环境下极易遭遇中间路由限速或TCP连接重传超时。不少构建跨国持续集成流水线的DevOps工程师在查阅<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">跨国研发加速方案</a>时，将网络通道是否具备稳定的万兆突发吞吐与低丢包率作为选型的核心指标，以彻底破除镜像拉取迟滞对软件交付的拖累。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">二、Docker Daemon 系统级代理配置实操规范</h2>
         <p>很多开发者误以为在终端export HTTP_PROXY即可让docker pull命令生效，然而Docker架构中实际拉取镜像的是后台守护进程dockerd。正确的姿势是通过修改/etc/systemd/system/docker.service.d/http-proxy.conf配置文件，向dockerd守护进程注入HTTP_PROXY与HTTPS_PROXY环境变量，并配置NO_PROXY排除本地局域网私有Registry，确保镜像拉取流量准确走加速专线通道。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">三、多架构镜像层并行下载与并发连接数微调</h2>

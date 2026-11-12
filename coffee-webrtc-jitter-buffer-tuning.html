@@ -46,7 +46,7 @@
       <section style="font-size:15px; line-height:1.85; color:#d1d5db;">
         
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">一、WebRTC 实时音频传输的核心指标与弱网痛点</h2>
-        <p>在实时音视频协同中，音频流对传输延迟的容忍度远低于普通单向视频点播。为了保证人类自然的对话节奏，端到端单向时延必须控制在150毫秒以内。当跨国公网链路发生网络拥塞时，数据包到达接收端的间隔产生随机波动，即网络抖动(Jitter)。不少跨国企业技术部门在参考权威的<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">优质节点精选指南</a>时，将网络物理链路的时延方差与丢包抑制率作为核心选型门槛，旨在从根本上杜绝跨国通话中的回声、吞字与严重机械杂音。</p>
+        <p>在实时音视频协同中，音频流对传输延迟的容忍度远低于普通单向视频点播。为了保证人类自然的对话节奏，端到端单向时延必须控制在150毫秒以内。当跨国公网链路发生网络拥塞时，数据包到达接收端的间隔产生随机波动，即网络抖动(Jitter)。不少跨国企业技术部门在参考权威的<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">实时音视频专线通道</a>时，将网络物理链路的时延方差与丢包抑制率作为核心选型门槛，旨在从根本上杜绝跨国通话中的回声、吞字与严重机械杂音。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">二、Jitter Buffer 自适应抖动缓冲区工作原理解析</h2>
         <p>WebRTC音频处理引擎(NetEQ)内部维护着一个动态自适应的抖动缓冲区(Jitter Buffer)。其核心职责是在接收端临时平抑数据包到达的不均匀性，按时间戳重新将音频包有序送入Opus解码器。若缓冲区设置过小，迟到的数据包将被直接丢弃引发声音卡顿；若缓冲区设置过大，虽能消弭丢包，但会使端到端通话延迟剧烈拉长，引发两地人员频繁抢话和对话节奏断裂。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">三、NetEQ 数据包丢失隐藏(PLC)与舒适噪音生成</h2>

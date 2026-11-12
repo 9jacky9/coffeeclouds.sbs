@@ -46,7 +46,7 @@
       <section style="font-size:15px; line-height:1.85; color:#d1d5db;">
         
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">一、跨洋长肥管道(LFN)的物理限制与传输困境</h2>
-        <p>在计算机网络通信中，长肥网络(Long Fat Networks)指带宽与往返延迟乘积(BDP)极大的网络链路。跨太平洋光缆正是典型的LFN场景：即使物理专线拥有万兆带宽储备，但由于长达150毫秒的不可逾越光速物理延迟，传统依赖丢包反馈的TCP拥塞控制算法在此环境下极其脆弱。网络架构师在规划高效的<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">海外网络加速方案</a>时，重点关注协议栈在跨洋长距离传输下的带宽利用率，致力于消除传统算法带来的带宽闲置弊端。</p>
+        <p>在计算机网络通信中，长肥网络(Long Fat Networks)指带宽与往返延迟乘积(BDP)极大的网络链路。跨太平洋光缆正是典型的LFN场景：即使物理专线拥有万兆带宽储备，但由于长达150毫秒的不可逾越光速物理延迟，传统依赖丢包反馈的TCP拥塞控制算法在此环境下极其脆弱。网络架构师在规划高效的<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">跨洋低时延骨干网</a>时，重点关注协议栈在跨洋长距离传输下的带宽利用率，致力于消除传统算法带来的带宽闲置弊端。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">二、传统 CUBIC 算法在高延迟积下的断崖式衰减</h2>
         <p>广泛应用于各大操作系统内核的CUBIC算法，将数据包丢失视为网络拥塞的唯一信号。在跨洋链路上，即使发生千分之一的非拥塞性随机误码丢包，CUBIC也会机械地将发送拥塞窗口减半，并需要经历漫长的高往返等待周期方能缓慢恢复。实测表明，在150ms延迟与1%随机丢包环境下，千兆CUBIC链路的实际传输吞吐量往往断崖式暴跌至不足百兆。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">三、BBRv3 拥塞控制算法的模型突破与吞吐实测</h2>

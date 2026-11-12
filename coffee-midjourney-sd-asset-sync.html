@@ -46,7 +46,7 @@
       <section style="font-size:15px; line-height:1.85; color:#d1d5db;">
         
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">一、AIGC 视觉工业化生产流程中的海量资产痛点</h2>
-        <p>在当今广告传媒、游戏概念设计及影视特效创作领域，AI图像生成工具已全面嵌入日常管线。Midjourney在Discord平台生成的单张超清网格图与放大素材达到上百兆，而本地部署的Stable Diffusion与ComfyUI工作流更涉及庞大的Checkpoint基础模型、LoRA权重及ControlNet模型文件。许多多模态设计工作室在引入高性能<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">网络加速器</a>时，旨在消解素材拉取与模型上传过程中的网络阻塞，保障数字资产在本地设计终端与远端算力节点间高速流通。</p>
+        <p>在当今广告传媒、游戏概念设计及影视特效创作领域，AI图像生成工具已全面嵌入日常管线。Midjourney在Discord平台生成的单张超清网格图与放大素材达到上百兆，而本地部署的Stable Diffusion与ComfyUI工作流更涉及庞大的Checkpoint基础模型、LoRA权重及ControlNet模型文件。许多多模态设计工作室在引入高性能<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">多模态算力网络连接</a>时，旨在消解素材拉取与模型上传过程中的网络阻塞，保障数字资产在本地设计终端与远端算力节点间高速流通。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">二、Discord CDN 媒体资产批量拉取加速实践</h2>
         <p>Midjourney生成的图片素材存储在Discord的海外Cloudflare CDN节点上。在国内直连环境下，由于图片体积巨大且涉及批量高频并发请求，常常出现图片切片加载迟滞或下载中断报错。通过为本地自动化收集脚本或机器人配置高带宽代理通道，并针对cdn.discordapp.com域名实施专线定向加速，可实现千张生成素材分钟级全自动入库本地NAS存储。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">三、Stable Diffusion 巨型模型权重的多线程断点续传</h2>

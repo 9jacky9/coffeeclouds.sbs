@@ -46,7 +46,7 @@
       <section style="font-size:15px; line-height:1.85; color:#d1d5db;">
         
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">一、Sing-Box 架构优势与现代网络代理演进</h2>
-        <p>相较于传统代理工具复杂的历史包袱，Sing-Box以极致精简的架构设计、原生多平台支持与出色的内存利用率脱颖而出。它彻底重构了路由匹配流水线，引入了预编译的高性能二进制规则集(SRS)文件，使上万条路由规则的匹配耗时降至纳秒级。不少追求极致性能的极客在测试高吞吐的<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">国际高速网络通道</a>时，纷纷将Sing-Box作为首选路由客户端，借助其强大的底层能力释放物理专线的澎湃潜能。</p>
+        <p>相较于传统代理工具复杂的历史包袱，Sing-Box以极致精简的架构设计、原生多平台支持与出色的内存利用率脱颖而出。它彻底重构了路由匹配流水线，引入了预编译的高性能二进制规则集(SRS)文件，使上万条路由规则的匹配耗时降至纳秒级。不少追求极致性能的极客在测试高吞吐的<a href="https://dajichang.mom/" target="_blank" style="color:#fb923c; font-weight:700; text-decoration:underline;">现代网络协议栈</a>时，纷纷将Sing-Box作为首选路由客户端，借助其强大的底层能力释放物理专线的澎湃潜能。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">二、TUN 虚拟网卡接管与网络栈(Stack)选型实测</h2>
         <p>在配置Sing-Box的inbounds模块时，启用tun接口能够无感接管操作系统全局所有网络流量。在网络栈选型上，Sing-Box提供了system、gvisor与mixed三种模式。实测表明，在Linux与macOS平台推荐采用system原生系统网络栈，能够直接借助操作系统内核的高性能TCP/IP实现，在高并发百兆吞吐下CPU占用率比轻量级用户态栈降低近40%。</p>
         <h2 style="font-size:19px; color:#fff; margin:24px 0 10px; font-weight:700;">三、二进制规则集(Rule-Set)自动化编译与分流编排</h2>
